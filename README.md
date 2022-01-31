@@ -1,1 +1,1 @@
-# webapps-on-aws-docs
+# Hands-On Cloud Native Applications with AWS Amplify
