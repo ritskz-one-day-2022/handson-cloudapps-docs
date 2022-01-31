@@ -1,0 +1,15 @@
+{
+  "name": "handson-cloudapps-docs",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/ritskz-one-day-2022/handson-cloudapps-docs.git",
+  "author": "asash3 <9412135+asash3@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.35"
+  },
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  }
+}
