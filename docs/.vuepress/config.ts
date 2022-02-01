@@ -6,5 +6,17 @@ module.exports = {
   description: 'クラウドベースのWebアプリケーション開発体験',
   theme: '@vuepress/theme-default',
   themeConfig: {
+    locales: {
+      '/': {
+        // navbar
+        navbar: navbar.ja,
+
+        // sidebar
+        sidebar: sidebar.ja,
+
+        // page meta
+        editLinkText: 'Edit this page on GitHub',
+      },
+    }
   }
 }
