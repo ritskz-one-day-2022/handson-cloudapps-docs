@@ -1,0 +1,1 @@
+const e={key:"v-7891060f",path:"/handson/module-one.html",title:"",lang:"ja-JP",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1643693114e3,contributors:[{name:"asash3",email:"9412135+asash3@users.noreply.github.com",commits:1}]},filePathRelative:"handson/module-one.md"};export{e as data};
