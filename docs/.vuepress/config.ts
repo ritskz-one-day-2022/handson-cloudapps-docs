@@ -5,7 +5,7 @@ module.exports = {
   title: 'Webアプリ開発ハンズオン',
   description: 'クラウドベースのWebアプリケーション開発体験',
   dest: 'dist/',
-  base: '/',
+  base: '/handson-cloudapps-docs/',
 
   theme: '@vuepress/theme-default',
   themeConfig: {
