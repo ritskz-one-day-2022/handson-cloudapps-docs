@@ -4,6 +4,9 @@ module.exports = {
   lang: 'ja-JP',
   title: 'Webアプリ開発ハンズオン',
   description: 'クラウドベースのWebアプリケーション開発体験',
+  dest: 'dist/',
+  base: '/',
+
   theme: '@vuepress/theme-default',
   themeConfig: {
     locales: {
