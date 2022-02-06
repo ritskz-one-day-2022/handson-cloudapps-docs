@@ -6,6 +6,9 @@ module.exports = {
   description: 'クラウドベースのWebアプリケーション開発体験',
   dest: 'dist/',
   base: '/handson-cloudapps-docs/',
+  head: [
+    ['meta', {name: 'robots', content: 'noindex'}],
+  ],
 
   theme: '@vuepress/theme-default',
   themeConfig: {
