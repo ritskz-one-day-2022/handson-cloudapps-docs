@@ -8,6 +8,7 @@ module.exports = {
   base: '/handson-cloudapps-docs/',
   head: [
     ['meta', {name: 'robots', content: 'noindex'}],
+    ['meta', {name: 'google-site-verification', content: 'J5VQ4JVxI8NKBJvybS8AFN6IpopC_ujMlJMqnmgmcis'}]
   ],
 
   theme: '@vuepress/theme-default',
