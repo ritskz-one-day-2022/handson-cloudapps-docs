@@ -36,9 +36,16 @@ npx create-react-app noteapp＜ユーザー名＞
 cd noteapp＜ユーザー名＞
 npm start
 ```
+※ [この警告](/images/module-one_nodejs-security-alert.png)が出た場合は「プライベートネットワーク」に☑をつけて「アクセスを許可する」を押してください。<br>
+
 ブラウザが自動で起動し下記の画面が表示されれば成功です。
 もし、ブラウザが自動で起動しない場合は手動でブラウザを起動してから「[http://localhost:3000/](http://localhost:3000/)」へアクセスしてみてください。
 ![](/images/module-one_npm-start-success.png)
+
+一度、コマンドプロンプト または ターミナルに戻り「CTRL + c」キーを入力して実行を停止します。
+```bash
+Terminate batch job (Y/N)? Y
+```
 
 ### Amplify CLI を設定する
 CLI を設定するには、`amplify configure`コマンドを実行します。この設定に基づいて、Amplify CLI はサービスの作成、管理、削除を行います。
@@ -82,12 +89,12 @@ Enter the access key of the newly created user:
 ```
 
 ### Amplify を初期化する
-先ほど作成した `noteapp＜ユーザー名＞` ディレクトリ内で、`amplify init`を使用し、amplifyのバックエンド環境を初期化します。
+先ほど作成した `noteapp＜ユーザー名＞` ディレクトリ内で、`amplify init`を使用し、Amplify のバックエンド環境を初期化します。
 ```bash
 amplify init --permissions-boundary arn:aws:iam::＜AWS環境のアカウントID＞:policy/OneDayIntern2022Boundary
 
 # 1. Amplify プロジェクト名を設定します。
-# 今回はデフォルトの「noteapp＜ユーザー名＞」をそのまま設定したいので、何も入力せず「Enter」を押下しましょう。
+# 今回はデフォルトの「noteapp＜ユーザー名＞」をそのまま設定したいので、何も入力せず「Enter」を押しましょう。
 Note: It is recommended to run this command from the root of your app directory
 ? Enter a name for the project (noteappintern) 
 
@@ -104,20 +111,44 @@ Project information
 
 # 2. プロジェクト情報を設定します。
 # 今回はデフォルトで問題ないため「Y」を入力後に「Enter」を押しましょう。
-# もし、エディターに「Visual Studio Code」を使っていない場合は「n」を入力後に「Enter」を押下して「? Choose your default editor」で任意のエディターを選択してください。
+# もし、エディターに「Visual Studio Code」を使っていない場合は「n」を入力後に「Enter」を押して「? Choose your default editor」で任意のエディターを選択してください。
 ? Initialize the project with the above configuration? (Y/n)
 Using default provider  awscloudformation
 
 # 3. AWS　への接続方式を選択します。
-# 「AWS profile」を選択し「Enter」を押下して続行しましょう。
+# 「AWS profile」を選択し「Enter」を押して続行しましょう。
 ? Select the authentication method you want to use: (Use arrow keys)
+> AWS profile
 
 # 4. AWS profile　を選択します。
-# 先ほど「Amplify CLI を設定する」で作成したプロファイルを選択し「Enter」を押下して続行しましょう。
+# 先ほど「Amplify CLI を設定する」で作成したプロファイルを選択し「Enter」を押して続行しましょう。
 ? Please choose the profile you want to use
+> oneday-2022
 
+# しばらく待って、下のような表示が出たら成功です。
+
+... 省略
+
+Your project has been successfully initialized and connected to the cloud!
+
+Some next steps:
+"amplify status" will show you what you've added already and if it's locally configured or deployed
+"amplify add <category>" will allow you to add features like user login or a backend API
+"amplify push" will build all your local backend resources and provision it in the cloud
+"amplify console" to open the Amplify Console and view your project status
+"amplify publish" will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud
+
+Pro tip:
+Try "amplify add api" to create a backend API and then "amplify push" to deploy everything
 
 ```
 
 # まとめ
-以上で Web アプリケーションの開発準備は整いました。
+以上で Web アプリケーションの開発準備は整いました。<br>
+最後にエディターで「noteapp＜ユーザー名＞」ディレクトリを開いてみましょう。<br>
+(参考：[Visual Studio Codeでの開き方](/images/module-one_open-project.png))<br>
+
+以下のような構成になっているはずです。
+![](/images/module-one_directory-structure.png)
+
+次のステップではAWSのサービスを使って、作成した Web アプリケーションをインターネットに公開します。
