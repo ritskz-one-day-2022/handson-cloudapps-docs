@@ -37,7 +37,7 @@ cd noteapp＜ユーザー名＞
 npm start
 ```
 ブラウザから「[http://localhost:3000/](http://localhost:3000/)」へアクセスし、下記の画面が表示されれば成功です。
-![](/images/module-zero--npm-start-success.png)
+![](/images/module-one_npm-start-success.png)
 
 ### Amplify CLI を設定する
 CLI を設定するには、`amplify configure`コマンドを実行します。ここで設定したユーザーのAWS環境に対して、Amplify CLI はサービスの作成、管理、削除を行います。
