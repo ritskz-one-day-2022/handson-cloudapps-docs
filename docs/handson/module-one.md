@@ -10,7 +10,7 @@ Web アプリケーションは大きく フロントエンド と バックエ�
 * フロントエンドの雛形を作成します。<br>
 フロントエンドの実装には React というフレームワークを使用します。<br>
 * バックエンド環境の構築準備を行います。<br>
-バックエンドにはAWSのサービスを使用します。また、バックエンドはAmplifyを使用して構築します。<br>
+バックエンドには AWS のサービスを使用します。また、バックエンドは Amplify を使用して構築します。<br>
 
 
 ## 学習内容
@@ -19,7 +19,7 @@ Web アプリケーションは大きく フロントエンド と バックエ�
 
 ## 主要な概念
  * **React アプリケーション** – React は Web アプリケーションフレームワークで、開発者が JavaScript を使用して高性能のシングルページアプリケーションをすばやく構築できるようにします。
- * **Amplify CLI** – Amplify CLI により、端末から直接 AWS のサービスを作成、管理、削除できます。その他にも、React アプリケーション が AWSサービスとの連携に必要な設定ファイルやソースコードを自動生成してくれます。
+ * **Amplify CLI** – Amplify CLI により、端末から直接 AWS のサービスを作成、管理、削除できます。その他にも、React アプリケーション が AWS サービスとの連携に必要な設定ファイルやソースコードを自動生成してくれます。
 
 ## 実装
 ### React アプリケーションを作成
@@ -36,44 +36,49 @@ npx create-react-app noteapp＜ユーザー名＞
 cd noteapp＜ユーザー名＞
 npm start
 ```
-ブラウザが自動で立ち上がり下記の画面が表示されれば成功です。
-もし、ブラウザが立ち上がらない場合はブラウザから「[http://localhost:3000/](http://localhost:3000/)」へアクセスしてみてください。
+ブラウザが自動で起動し下記の画面が表示されれば成功です。
+もし、ブラウザが自動で起動しない場合は手動でブラウザを起動してから「[http://localhost:3000/](http://localhost:3000/)」へアクセスしてみてください。
 ![](/images/module-one_npm-start-success.png)
 
 ### Amplify CLI を設定する
-CLI を設定するには、`amplify configure`コマンドを実行します。ここで設定したユーザーのAWS環境に対して、Amplify CLI はサービスの作成、管理、削除を行います。
+CLI を設定するには、`amplify configure`コマンドを実行します。この設定に基づいて、Amplify CLI はサービスの作成、管理、削除を行います。
 ```bash
 amplify configure
 
-# 1. ブラウザが勝手に立ち上がりAWSのサイトを開いてしまうかもしれませんが、サイトを閉じてしまっても問題ないです。
-# 「Enter」を押下して続行しましょう
+# 1. amplify configure を実行するとブラウザが勝手に起動し「AWS マネジメントコンソール」が開きます。
+# この段階では使わないので閉じてしまっても問題ないです。
+# コマンドプロンプト または ターミナルに戻り「Enter」を押して続行しましょう
 
-# 2. regionはap-northeast-1（東京）を選択します。「矢印キー」で選択し「Enter」で決定です。
+# 2. リージョン を設定します。
+# リージョンは AWS サービスを運用する機器が収容されたデータセンターの所在地です。
+# ここで選択したリージョンに AWS サービスが作成されます。
+# ap-northeast-1（東京）を選択します。「矢印キー」で選択し「Enter」で決定です。
 Specify the AWS Region
 ? region:  ap-northeast-1
 
-# 3. ユーザー名は事前に共有してある「AWSアカウント一覧」の ＜ユーザー名＞を入力してください。
+# 3. ユーザー名を設定します。
+# ユーザー名は事前に共有してある「AWSアカウント一覧」の＜ユーザー名＞を入力してください。
 Specify the username of the new IAM user:
 ? user name:  ＜ユーザー名＞
-# 入力を終えたら「Enter」を押下して続行しましょう。
 
-# 4. 再度、AWSのサイトが開きますがこちらも閉じてしまって問題ないです。
-# 「Enter」を押下して続行しましょう。
+# 4. 再度、AWS　のサイトが開きますがこちらも閉じてしまって問題ないです。
+# 「Enter」を押して続行しましょう。
 
-# 5. アクセスキーIDは事前に共有してある「AWSアカウント一覧.csv」の＜Access key ID＞をコピーして貼り付けてください。
-# windowsのコマンドプロンプトに張り付ける場合は、コピー後、コマンドプロンプト上で「右クリック」です。
+# 5. アクセスキー ID を設定します。
+# アクセスキー ID は事前に配布してある「AWSアカウント一覧.csv」の＜Access key ID＞をコピーして貼り付けてください。
+# Windowsのコマンドプロンプトに張り付ける場合は、コピー後、コマンドプロンプト上で「右クリック」です。
 Enter the access key of the newly created user:
 ? accessKeyId:  ＜Access key ID＞貼り付け
-# 入力を終えたら「Enter」を押下して続行しましょう。
 
-# 6. アクセスキーIDは事前に共有してある「AWSアカウント一覧.csv」の＜Secret access key＞をコピーして貼り付けてください。
-? secretAccessKey:  ＜Secret access key＞
-# 入力を終えたら「Enter」を押下して続行しましょう。
+# 6. シークレットアクセスキーを設定します。
+# アクセスキーは事前に配布してある「AWSアカウント一覧.csv」の＜Secret access key＞をコピーして貼り付けてください。
+? secretAccessKey:  ＜Secret access key＞貼り付け
 
 # 7. ここまでの設定情報（プロファイル）に名前をつけます。
 # 分かりやすい名前を付けてください。この手順では「oneday-2022」とします。
 ? Profile Name:  oneday-2022
-# 入力を終えたら「Enter」を押下して終了です。
+
+# 以上で設定は完了です。
 ```
 
 ### Amplify を初期化する
@@ -87,7 +92,7 @@ Note: It is recommended to run this command from the root of your app directory
 ? Enter a name for the project (noteappintern) 
 
 Project information
-| Name: noteappintern0
+| Name: noteappintern
 | Environment: dev
 | Default editor: Visual Studio Code
 | App type: javascript
@@ -98,16 +103,16 @@ Project information
 | Start Command: npm run-script start
 
 # 2. プロジェクト情報を設定します。
-# 今回はデフォルトで問題ないため「Y」を入力後に「Enter」を押下しましょう。
+# 今回はデフォルトで問題ないため「Y」を入力後に「Enter」を押しましょう。
 # もし、エディターに「Visual Studio Code」を使っていない場合は「n」を入力後に「Enter」を押下して「? Choose your default editor」で任意のエディターを選択してください。
 ? Initialize the project with the above configuration? (Y/n)
 Using default provider  awscloudformation
 
-# 3. AWSへの接続方式を選択します。
+# 3. AWS　への接続方式を選択します。
 # 「AWS profile」を選択し「Enter」を押下して続行しましょう。
 ? Select the authentication method you want to use: (Use arrow keys)
 
-# 4. AWS profileを選択します。
+# 4. AWS profile　を選択します。
 # 先ほど「Amplify CLI を設定する」で作成したプロファイルを選択し「Enter」を押下して続行しましょう。
 ? Please choose the profile you want to use
 
