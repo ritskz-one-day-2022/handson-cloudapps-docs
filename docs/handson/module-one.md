@@ -26,7 +26,7 @@ Web アプリケーションは大きく フロントエンド と バックエ�
 簡単に React アプリケーションを作成するには、`create-react-app` のコマンドを使用します。<br>
 コマンドプロンプト (Windows) またはターミナル (macOS) 上で次のコマンドを使用して、このパッケージをインストールします。
 ```bash
-// 今回は誰が作ったアプリか判別できるようにアプリ名の末尾にユーザー名を追加します
+// 今回は誰が作ったアプリなのか判別できるようにアプリ名の末尾にユーザー名を追加します
 
 npx create-react-app noteapp＜ユーザー名＞
 ```
@@ -36,7 +36,8 @@ npx create-react-app noteapp＜ユーザー名＞
 cd noteapp＜ユーザー名＞
 npm start
 ```
-ブラウザから「[http://localhost:3000/](http://localhost:3000/)」へアクセスし、下記の画面が表示されれば成功です。
+ブラウザが自動で立ち上がり下記の画面が表示されれば成功です。
+もし、ブラウザが立ち上がらない場合はブラウザから「[http://localhost:3000/](http://localhost:3000/)」へアクセスしてみてください。
 ![](/images/module-one_npm-start-success.png)
 
 ### Amplify CLI を設定する
@@ -44,12 +45,35 @@ CLI を設定するには、`amplify configure`コマンドを実行します。
 ```bash
 amplify configure
 
+# 1. ブラウザが勝手に立ち上がりAWSのサイトを開いてしまうかもしれませんが、サイトを閉じてしまっても問題ないです。
+# 「Enter」を押下して続行しましょう
+
+# 2. regionはap-northeast-1（東京）を選択します。「矢印キー」で選択し「Enter」で決定です。
+Specify the AWS Region
 ? region:  ap-northeast-1
+
+# 3. ユーザー名は事前に共有してある「AWSアカウント一覧」の ＜ユーザー名＞を入力してください。
 Specify the username of the new IAM user:
 ? user name:  ＜ユーザー名＞
-? accessKeyId:  ＜アクセスキー貼り付け＞
-? secretAccessKey:  ＜シークレットキー貼り付け＞
+# 入力を終えたら「Enter」を押下して続行しましょう。
+
+# 4. 再度、AWSのサイトが開きますがこちらも閉じてしまって問題ないです。
+# 「Enter」を押下して続行しましょう。
+
+# 5. アクセスキーIDは事前に共有してある「AWSアカウント一覧.csv」の＜Access key ID＞をコピーして貼り付けてください。
+# windowsのコマンドプロンプトに張り付ける場合は、コピー後、コマンドプロンプト上で「右クリック」です。
+Enter the access key of the newly created user:
+? accessKeyId:  ＜Access key ID＞貼り付け
+# 入力を終えたら「Enter」を押下して続行しましょう。
+
+# 6. アクセスキーIDは事前に共有してある「AWSアカウント一覧.csv」の＜Secret access key＞をコピーして貼り付けてください。
+? secretAccessKey:  ＜Secret access key＞
+# 入力を終えたら「Enter」を押下して続行しましょう。
+
+# 7. ここまでの設定情報（プロファイル）に名前をつけます。
+# 分かりやすい名前を付けてください。この手順では「oneday-2022」とします。
 ? Profile Name:  oneday-2022
+# 入力を終えたら「Enter」を押下して終了です。
 ```
 
 ### Amplify を初期化する
@@ -57,8 +81,10 @@ Specify the username of the new IAM user:
 ```bash
 amplify init --permissions-boundary arn:aws:iam::＜AWS環境のアカウントID＞:policy/OneDayIntern2022Boundary
 
+# 1. Amplify プロジェクト名を設定します。
+# 今回はデフォルトの「noteapp＜ユーザー名＞」をそのまま設定したいので、何も入力せず「Enter」を押下しましょう。
 Note: It is recommended to run this command from the root of your app directory
-? Enter a name for the project (noteappintern0) ⇦ プロジェクト名を変えない場合はそのままEnterでOK
+? Enter a name for the project (noteappintern) 
 
 Project information
 | Name: noteappintern0
@@ -71,7 +97,21 @@ Project information
 | Build Command: npm run-script build
 | Start Command: npm run-script start
 
+# 2. プロジェクト情報を設定します。
+# 今回はデフォルトで問題ないため「Y」を入力後に「Enter」を押下しましょう。
+# もし、エディターに「Visual Studio Code」を使っていない場合は「n」を入力後に「Enter」を押下して「? Choose your default editor」で任意のエディターを選択してください。
 ? Initialize the project with the above configuration? (Y/n)
+Using default provider  awscloudformation
+
+# 3. AWSへの接続方式を選択します。
+# 「AWS profile」を選択し「Enter」を押下して続行しましょう。
+? Select the authentication method you want to use: (Use arrow keys)
+
+# 4. AWS profileを選択します。
+# 先ほど「Amplify CLI を設定する」で作成したプロファイルを選択し「Enter」を押下して続行しましょう。
+? Please choose the profile you want to use
+
+
 ```
 
 # まとめ
