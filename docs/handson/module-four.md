@@ -35,7 +35,7 @@ amplify add api
 ? Choose a schema template:
 > Single object with fields (e.g., “Todo” with ID, name, description)
 
-# y を入力する
+# y を入力しましょう。
 √ Do you want to edit the schema now? (Y/n) · yes
 
 # 使用中のエディタを選択する。（ここでは Visual Studio Code を選択する）
