@@ -91,7 +91,7 @@ Enter the access key of the newly created user:
 ### Amplify を初期化する
 先ほど作成した `noteapp＜ユーザー名＞` ディレクトリ内で、`amplify init`を使用し、Amplify のバックエンド環境を初期化します。
 ```bash
-amplify init --permissions-boundary arn:aws:iam::＜AWS環境のアカウントID＞:policy/OneDayIntern2022Boundary
+amplify init --permissions-boundary arn:aws:iam::＜AWS環境のアカウントID＞:policy/OneDayIntern2022PermissionsBoundary
 
 # 1. Amplify プロジェクト名を設定します。
 # 今回はデフォルトの「noteapp＜ユーザー名＞」をそのまま設定したいので、何も入力せず「Enter」を押しましょう。
@@ -146,7 +146,7 @@ Try "amplify add api" to create a backend API and then "amplify push" to deploy 
 # まとめ
 以上で Web アプリケーションの開発準備は整いました。<br>
 最後にエディターで「noteapp＜ユーザー名＞」ディレクトリを開いてみましょう。<br>
-(参考：[Visual Studio Codeでの開き方](/images/module-one_open-project.png))<br>
+(参考：[Visual Studio Codeでの開き方](/handson-cloudapps-docs/images/module-one_open-project.png))<br>
 
 以下のような構成になっているはずです。
 ![](/images/module-one_directory-structure.png)
