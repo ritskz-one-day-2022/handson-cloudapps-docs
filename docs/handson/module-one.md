@@ -21,7 +21,7 @@ Web アプリケーションは大きく フロントエンド と バックエ�
  * **React アプリケーション** – React は Web アプリケーションフレームワークで、開発者が JavaScript を使用して高性能のシングルページアプリケーションをすばやく構築できるようにします。
  * **Amplify CLI** – Amplify CLI により、端末から直接 AWS のサービスを作成、管理、削除できます。その他にも、React アプリケーション が AWS サービスとの連携に必要な設定ファイルやソースコードを自動生成してくれます。
 
-## 実装
+## 演習
 ### React アプリケーションを作成
 簡単に React アプリケーションを作成するには、`create-react-app` のコマンドを使用します。<br>
 コマンドプロンプト (Windows) またはターミナル (macOS) 上で次のコマンドを使用して、このパッケージをインストールします。
@@ -64,7 +64,7 @@ Specify the AWS Region
 ? region:  ap-northeast-1
 
 # 3. ユーザー名を設定します。
-# ユーザー名は事前に共有してある「AWSアカウント一覧」の＜ユーザー名＞を入力してください。
+# ユーザー名は事前に共有してある「AWSアカウント一覧.csv」の＜ユーザー名＞を入力してください。
 Specify the username of the new IAM user:
 ? user name:  ＜ユーザー名＞
 
@@ -72,14 +72,14 @@ Specify the username of the new IAM user:
 # 「Enter」を押して続行しましょう。
 
 # 5. アクセスキー ID を設定します。
-# アクセスキー ID は事前に配布してある「AWSアカウント一覧.csv」の＜Access key ID＞をコピーして貼り付けてください。
+# アクセスキー ID は事前に配布してある「AWSアカウント一覧.csv」の＜アクセスキーID＞をコピーして貼り付けてください。
 # Windowsのコマンドプロンプトに張り付ける場合は、コピー後、コマンドプロンプト上で「右クリック」です。
 Enter the access key of the newly created user:
-? accessKeyId:  ＜Access key ID＞貼り付け
+? accessKeyId:  ＜アクセスキーID＞貼り付け
 
 # 6. シークレットアクセスキーを設定します。
-# アクセスキーは事前に配布してある「AWSアカウント一覧.csv」の＜Secret access key＞をコピーして貼り付けてください。
-? secretAccessKey:  ＜Secret access key＞貼り付け
+# アクセスキーは事前に配布してある「AWSアカウント一覧.csv」の＜シークレットアクセスキー＞をコピーして貼り付けてください。
+? secretAccessKey:  ＜シークレットアクセスキー＞貼り付け
 
 # 7. ここまでの設定情報（プロファイル）に名前をつけます。
 # 分かりやすい名前を付けてください。この手順では「oneday-2022」とします。

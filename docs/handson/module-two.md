@@ -11,7 +11,7 @@ STEP 1 で作成した React アプリケーションを AWS Amplify の Web ホ
 ## 主要な概念
  * **Web ホスティングサービス** – Web サイトまたは Web ページをインターネットに公開できるようにするサービスです
 
-## 実装
+## 演習
 ### アプリを AWS Amplify でデプロイする
 Amplify CLI を使用してアプリケーションホスティングを行いましょう。<br>
 `amplify add hosting`を実行し、質問に答えていきます。
