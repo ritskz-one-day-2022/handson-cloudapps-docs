@@ -36,7 +36,7 @@ npx create-react-app noteapp＜ユーザー名＞
 cd noteapp＜ユーザー名＞
 npm start
 ```
-※ [この警告](/images/module-one_nodejs-security-alert.png)が出た場合は「プライベートネットワーク」に☑をつけて「アクセスを許可する」を押してください。<br>
+※ [この警告](/handson-cloudapps-docs/images/module-one_nodejs-security-alert.png)が出た場合は「プライベートネットワーク」に☑をつけて「アクセスを許可する」を押してください。<br>
 
 ブラウザが自動で起動し下記の画面が表示されれば成功です。
 もし、ブラウザが自動で起動しない場合は手動でブラウザを起動してから「[http://localhost:3000/](http://localhost:3000/)」へアクセスしてみてください。

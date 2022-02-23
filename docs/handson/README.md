@@ -42,7 +42,7 @@
 以降の手順ではコマンド操作が必要な場面が出てきます。<br>
 コマンドはコマンドプロンプト (Windows) またはターミナル (macOS)上で実行します。
 
-* [Windows](/images/module-zero_howto-start-command-prompt.png)
+* [Windows](/handson-cloudapps-docs/images/module-zero_howto-start-command-prompt.png)
 * Mac/Linux 
 :::
 
