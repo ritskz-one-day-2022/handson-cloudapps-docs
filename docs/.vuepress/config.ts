@@ -1,6 +1,8 @@
+import { defineUserConfig } from '@vuepress/cli'
+import type { DefaultThemeOptions } from '@vuepress/theme-default'
 import { navbar, sidebar } from './configs'
 
-module.exports = {
+export default defineUserConfig<DefaultThemeOptions>({
   lang: 'ja-JP',
   title: 'Webアプリ開発ハンズオン',
   description: 'クラウドベースのWebアプリケーション開発体験',
@@ -24,6 +26,7 @@ module.exports = {
         // page meta
         editLinkText: 'Edit this page on GitHub',
       },
-    }
+    },
+    lastUpdated: false
   }
-}
+});
